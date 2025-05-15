@@ -5,10 +5,10 @@ export function NavigationButton() {
     return (
         <>
             <NavLink to='/'>
-                <CustomButton variant='text' title='Home' fullWidth='fullWidth' />
+                <CustomButton variant='text' title='Home' />
             </NavLink>
             <NavLink to='/favorite'>
-                <CustomButton variant='text' title='Favorite' fullWidth='fullWidth' />
+                <CustomButton variant='text' title='Favorite' />
             </NavLink>
         </>
     )
