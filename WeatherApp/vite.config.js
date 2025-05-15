@@ -23,6 +23,7 @@ export default defineConfig({
       "@services": resolve(rootDir, "services"),
       "@store": resolve(rootDir, "store"),
       "@pages": resolve(rootDir, "pages"),
+      "@templates": resolve(rootDir, "templates"),
     }
   } 
 })
