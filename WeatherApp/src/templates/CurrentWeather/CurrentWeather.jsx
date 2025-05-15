@@ -1,8 +1,14 @@
 import { Box, Skeleton, Typography } from "@mui/material";
+import { useSelector } from 'react-redux';
+import { selectValue } from "@store";
 
 export function CurrentWeather({ data }) {
+    const value = useSelector(selectValue);
+    
+    console.log('value -> ', value);
+    
 
-    console.log('data -> ', data);
+    // console.log('data -> ', data);
     const { cityName, temperature, weatherIcon, windSpeed, humidity } = data;
 
     return (

@@ -13,7 +13,7 @@ const data = {
 
 export function HomePage() {
     const matches = useMediaQuery('(min-width:600px)');
-    console.log('media ->', matches);
+    // console.log('media ->', matches);
 
     return (
         <PageLayout

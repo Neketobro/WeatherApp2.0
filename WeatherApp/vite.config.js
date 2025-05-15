@@ -24,6 +24,7 @@ export default defineConfig({
       "@store": resolve(rootDir, "store"),
       "@pages": resolve(rootDir, "pages"),
       "@templates": resolve(rootDir, "templates"),
+      "@api": resolve(rootDir, "api"),
     }
   } 
 })
