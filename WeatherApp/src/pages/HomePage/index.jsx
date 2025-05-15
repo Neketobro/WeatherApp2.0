@@ -1,13 +1,13 @@
 import { Box } from '@mui/material'
 import { PageLayout, NavPanel } from '@components'
 
-export function MainPage() {
+export function HomePage() {
     return (
         <PageLayout
             renderHeader={() => <NavPanel />}
             renderMain={() => (
                 <Box>
-                    MainPage
+                    HomePage
                 </Box>
             )}
         />

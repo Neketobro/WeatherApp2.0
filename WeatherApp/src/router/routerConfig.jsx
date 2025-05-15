@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { ErrorPage, MainPage } from '@pages';
+import { ErrorPage, HomePage, FavoritePage } from '@pages';
 
 const routerConfig = [
     {
@@ -7,7 +7,8 @@ const routerConfig = [
         errorElement: <ErrorPage />,
         id: 'root',
         children: [
-            { index: true, element: <MainPage /> },
+            { index: true, element: <HomePage /> },
+            { path: '/favorite', element: <FavoritePage /> }
         ],
     },
 ];
