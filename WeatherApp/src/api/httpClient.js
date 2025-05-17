@@ -1,7 +1,6 @@
-import { axios } from 'axios';
+import axios from 'axios';
 
-const baseURL = import.meta.env.BASE_VITE_API_URL;
-console.log(baseURL);
+const baseURL = import.meta.env.VITE_BASE_URL_API;
 
 const axiosConf = (signal) =>
   axios.create({

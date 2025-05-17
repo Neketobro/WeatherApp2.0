@@ -1,5 +1,14 @@
 import { get } from './httpClient';
 
-export async function getForecastCity(signal) {
-  return await get('/', signal);
+const APIkey = import.meta.env.VITE_BASE_API_KEY;
+
+console.log('APIkey', APIkey);
+
+
+export async function getForecastCity(payload, signal) {
+  console.log('payload -> ', payload);
+  console.log('signal -> ', signal);
+  
+  return await get(`?q=dnipro&appid=${APIkey}`, signal);
+  // return await get(`?q=${city}&appid=${APIkey}`, signal);
 }
