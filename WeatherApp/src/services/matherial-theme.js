@@ -1,4 +1,5 @@
-import { LIGHT_THEME } from './constants.js';
+import { LIGHT_THEME } from '@services';
+import { colorForecastPrimary } from '@utils';
 
 export const getDesignTokens = (mode) => ({
   palette: {
@@ -6,7 +7,7 @@ export const getDesignTokens = (mode) => ({
     ...(mode === LIGHT_THEME
       ? {
           primary: {
-            main: 'rgb(106, 186, 240)',
+            main: `rgb(${colorForecastPrimary})`,
           },
           secondary: {
             main: 'rgb(248, 252, 254)',

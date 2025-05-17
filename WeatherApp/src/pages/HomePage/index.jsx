@@ -19,8 +19,8 @@ export function HomePage() {
         <PageLayout
             renderHeader={() => <NavPanel />}
             renderMain={() => (
-                <Container sx={{ background: 'green', height: '100%', display: 'flex', alignItems: 'center' }}>
-                    <Paper  sx={{ background: 'yellow', height: '70vh', width: '30vw' }}>
+                <Container sx={{ height: '100%', display: 'flex', alignItems: 'center' }}>
+                    <Paper elevation={2} sx={{ height: '70vh', width: '30vw', borderRadius: '50px', padding: '10px 30px' }}>
                         <CurrentWeather data={data} />
                     </Paper >
                 </Container>
