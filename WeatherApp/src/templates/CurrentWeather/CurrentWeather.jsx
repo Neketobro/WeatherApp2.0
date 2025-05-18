@@ -1,9 +1,9 @@
-import { Box, Skeleton, Typography } from "@mui/material";
+import { Box, Skeleton, Typography, Grid } from "@mui/material";
 import { useDispatch, useSelector } from 'react-redux';
 import { selectValue } from "@store";
 import { weatherFetch } from "@store";
 import { useEffect } from "react";
-import { MainText, WeatherIcon } from "./index";
+import { MainText, WeatherIcon, AdditionalInfo } from "./index";
 
 export function CurrentWeather() {
     const data = useSelector(selectValue);
@@ -27,6 +27,20 @@ export function CurrentWeather() {
                             {weather[0].main}
                         </Typography>
                     </Box>
+                    <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                        <Grid size={6}>
+                            <AdditionalInfo />
+                        </Grid>
+                        <Grid size={6}>
+                            <AdditionalInfo />
+                        </Grid>
+                        <Grid size={6}>
+                            <AdditionalInfo />
+                        </Grid>
+                        <Grid size={6}>
+                            <AdditionalInfo />
+                        </Grid>
+                    </Grid>
 
                 </>
             ) : (
