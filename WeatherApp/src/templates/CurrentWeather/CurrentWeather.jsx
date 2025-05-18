@@ -12,7 +12,7 @@ export function CurrentWeather() {
     useEffect(() => {
         dispatch(weatherFetch('Hello'));
     }, [dispatch]);
-    const { name, weather, main } = data;
+    const { name, weather, main, wind } = data;
     console.log('data after -> ', data);
 
     return (
@@ -20,40 +20,41 @@ export function CurrentWeather() {
             {Object.keys(data).length > 0 ? (
                 <>
                     <MainText text={name} />
-                    <Box sx={{ width: '100%', height: '45vh', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, paddingBlock: '2vh' }}>
+                    <Box sx={{ background: 'lightyellow', width: '100%', height: '40vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-evenly', gap: 2, marginBlock: '2vh' }}>
                         <WeatherIcon weatherStatus={weather[0].main} />
                         <MainText text={main.temp} />
                         <Typography fontWeight='bold' fontStyle='italic' fontSize='1.5rem' color="text.secondary" sx={{ letterSpacing: 2 }}>
-                            {weather[0].main}
+                            {weather[0].description}
                         </Typography>
                     </Box>
-                    <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                        <Grid size={6}>
-                            <AdditionalInfo />
-                        </Grid>
-                        <Grid size={6}>
-                            <AdditionalInfo />
-                        </Grid>
-                        <Grid size={6}>
-                            <AdditionalInfo />
-                        </Grid>
-                        <Grid size={6}>
-                            <AdditionalInfo />
-                        </Grid>
-                    </Grid>
-
+                    <AdditionalInfo main={main} wind={wind} />
                 </>
             ) : (
                 <>
                     <Box sx={{ width: '100%', height: 60, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <Skeleton variant="rounded" width={200} height={40} />
                     </Box>
-                    <Box sx={{ width: '100%', height: '45vh', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingBlock: '2vh' }}>
+                    <Box sx={{ width: '100%', height: '45vh', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, paddingBlock: '2vh' }}>
                         <Skeleton variant="circular" width='14vw' height='14vw' />
                         <Box sx={{ width: '100%', height: 60, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                             <Skeleton variant="rounded" width={200} height={40} />
                         </Box>
+                        <Skeleton variant="rounded" width={200} height={40} />
                     </Box>
+                    <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                        <Grid size={6}>
+                            <Skeleton variant="rounded" width={150} height={60} />
+                        </Grid>
+                        <Grid size={6}>
+                            <Skeleton variant="rounded" width={150} height={60} />
+                        </Grid>
+                        <Grid size={6}>
+                            <Skeleton variant="rounded" width={150} height={60} />
+                        </Grid>
+                        <Grid size={6}>
+                            <Skeleton variant="rounded" width={150} height={60} />
+                        </Grid>
+                    </Grid>
                 </>
             )}
         </>
