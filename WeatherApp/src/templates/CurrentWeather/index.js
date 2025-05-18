@@ -1,3 +1,3 @@
 export * from './CurrentWeather.jsx';
-export * from './CityName';
+export * from './MainText';
 export * from './WeatherIcon';
