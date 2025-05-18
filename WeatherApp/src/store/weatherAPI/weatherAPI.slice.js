@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getForecastCity } from '@api';
 
 const initialState = {
-    value: 0,
+    value: {},
     status: null,
     error: null,
 }
