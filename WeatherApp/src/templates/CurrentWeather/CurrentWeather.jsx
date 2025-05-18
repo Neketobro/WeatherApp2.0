@@ -1,4 +1,4 @@
-import { Box, Skeleton } from "@mui/material";
+import { Box, Skeleton, Typography } from "@mui/material";
 import { useDispatch, useSelector } from 'react-redux';
 import { selectValue } from "@store";
 import { weatherFetch } from "@store";
@@ -20,9 +20,12 @@ export function CurrentWeather() {
             {Object.keys(data).length > 0 ? (
                 <>
                     <MainText text={name} />
-                    <Box sx={{ width: '100%', height: '45vh', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5, paddingBlock: '2vh' }}>
+                    <Box sx={{ width: '100%', height: '45vh', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, paddingBlock: '2vh' }}>
                         <WeatherIcon weatherStatus={weather[0].main} />
                         <MainText text={main.temp} />
+                        <Typography fontWeight='bold' fontStyle='italic' fontSize='1.5rem' color="text.secondary" sx={{ letterSpacing: 2 }}>
+                            {weather[0].main}
+                        </Typography>
                     </Box>
 
                 </>
@@ -73,7 +76,7 @@ export function CurrentWeather() {
 //     let dayName = days[dayOfWeek]; // получение названия дня недели
 
 //     let month = now.toLocaleString('en-US', { month: 'short' });
-// //  console.log(month); // Например: "Sep"  
+// //  console.log(month); // Например: "Sep"
 
 //     dayName = dayName < 10 ? "0" + dayName : dayName;
 //     day = day < 10 ? "0" + day : day;

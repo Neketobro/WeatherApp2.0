@@ -17,7 +17,7 @@ export const getDesignTokens = (mode) => ({
           },
           text: {
             primary: 'rgb(0, 0, 0)',
-            secondary: 'rgb(74, 74, 74)',
+            secondary: 'rgb(134, 134, 134)',
           },
           divider: 'rgb(211, 211, 211)',
         }
