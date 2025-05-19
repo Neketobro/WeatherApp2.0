@@ -1,4 +1,4 @@
-import { Box, Skeleton, Typography, Grid } from "@mui/material";
+import { Box, Skeleton, Typography, Grid, Paper } from "@mui/material";
 import { useDispatch, useSelector } from 'react-redux';
 import { selectValue } from "@store";
 import { weatherFetch } from "@store";
@@ -18,9 +18,9 @@ export function CurrentWeather() {
     return (
         <>
             {Object.keys(data).length > 0 ? (
-                <>
+                <Paper elevation={2} sx={{ height: '70vh', width: '20vw', borderRadius: '50px', padding: '30px', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center' }}>
                     <MainText text={name} />
-                    <Box sx={{ background: 'lightyellow', width: '100%', height: '40vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-evenly', gap: 2, marginBlock: '2vh' }}>
+                    <Box sx={{ background: 'lightyellow', width: '80%', height: '40vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-evenly', gap: 2, padding: '2vh', marginBlock: '2vh', borderRadius: '50px' }}>
                         <WeatherIcon weatherStatus={weather[0].main} />
                         <MainText text={main.temp} />
                         <Typography fontWeight='bold' fontStyle='italic' fontSize='1.5rem' color="text.secondary" sx={{ letterSpacing: 2 }}>
@@ -28,9 +28,9 @@ export function CurrentWeather() {
                         </Typography>
                     </Box>
                     <AdditionalInfo main={main} wind={wind} />
-                </>
+                </Paper>
             ) : (
-                <>
+                <Paper elevation={2} sx={{ height: '70vh', width: '25vw', borderRadius: '50px', padding: '30px', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly' }}>
                     <Box sx={{ width: '100%', height: 60, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <Skeleton variant="rounded" width={200} height={40} />
                     </Box>
@@ -55,7 +55,7 @@ export function CurrentWeather() {
                             <Skeleton variant="rounded" width={150} height={60} />
                         </Grid>
                     </Grid>
-                </>
+                </Paper>
             )}
         </>
     )

@@ -9,12 +9,12 @@ import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 
 const weatherIcon = {
-    Clouds: <CloudQueueIcon sx={{ fontSize: "10vw" }} />,
-    Clear: <WbSunnyOutlinedIcon sx={{ fontSize: "10vw" }} />,
-    Snow: <AcUnitOutlinedIcon sx={{ fontSize: "10vw" }} />,
-    Rain: <WaterDropOutlinedIcon sx={{ fontSize: "10vw" }} />,
-    Thunderstorm: <ThunderstormOutlinedIcon sx={{ fontSize: "10vw" }} />,
-    Drizzle: <FlashOnOutlinedIcon sx={{ fontSize: "10vw" }} />,
+    Clouds: <CloudQueueIcon sx={{ fontSize: "8vw" }} />,
+    Clear: <WbSunnyOutlinedIcon sx={{ fontSize: "8vw" }} />,
+    Snow: <AcUnitOutlinedIcon sx={{ fontSize: "8vw" }} />,
+    Rain: <WaterDropOutlinedIcon sx={{ fontSize: "8vw" }} />,
+    Thunderstorm: <ThunderstormOutlinedIcon sx={{ fontSize: "8vw" }} />,
+    Drizzle: <FlashOnOutlinedIcon sx={{ fontSize: "8vw" }} />,
 }
 
 export function WeatherIcon({ weatherStatus }) {
@@ -26,7 +26,7 @@ export function WeatherIcon({ weatherStatus }) {
         <Avatar
             alt="Remy Sharp"
             src="/static/images/avatar/1.jpg"
-            sx={{ width: '14vw', height: '14vw', bgcolor: colorForIcon }}
+            sx={{ width: '11vw', height: '11vw', bgcolor: colorForIcon }}
         >
             {IconComponent}
         </Avatar>
