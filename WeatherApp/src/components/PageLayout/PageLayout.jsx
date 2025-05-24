@@ -17,7 +17,7 @@ export function PageLayout({
         >
             <Container
                 component="header"
-                sx={{ background: 'lightyellow', flex: 1 }}
+                sx={{ flex: 1 }}
             >
                 {typeof renderHeader === 'function' ? renderHeader() : renderHeader}
             </Container>

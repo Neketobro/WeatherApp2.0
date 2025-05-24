@@ -17,11 +17,11 @@ export function ThemeButton() {
     return (
         <>
             {theme === DARK_THEME ? (
-                <Fab onClick={toggleThemeHandler}>
+                <Fab onClick={toggleThemeHandler} sx={{ bgcolor: 'primary.main', }}>
                     <LightModeOutlinedIcon />
                 </Fab>
             ) : (
-                <Fab onClick={toggleThemeHandler}>
+                <Fab onClick={toggleThemeHandler} sx={{ bgcolor: 'primary.main', }}>
                     <DarkModeOutlinedIcon />
                 </Fab>
             )}
