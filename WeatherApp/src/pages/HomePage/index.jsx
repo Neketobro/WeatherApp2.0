@@ -1,5 +1,5 @@
 import { useMediaQuery, Container, Box } from '@mui/material';
-import { PageLayout, NavPanel } from '@components';
+import { PageLayout, Header } from '@components';
 import { CurrentWeather } from '@templates'
 
 export function HomePage() {
@@ -8,7 +8,7 @@ export function HomePage() {
 
     return (
         <PageLayout
-            renderHeader={() => <NavPanel />}
+            renderHeader={() => <Header />}
             renderMain={() => (
                 <Box sx={{ height: '100%', display: 'flex', alignItems: 'center', paddingInline: '5vw' }}>
                     <CurrentWeather />

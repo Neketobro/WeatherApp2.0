@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, Container } from '@mui/material';
 
 export function PageLayout({
     renderHeader,
@@ -10,23 +10,23 @@ export function PageLayout({
         <Box
             sx={{
                 display: 'flex',
-                flexDirection: 'row',
+                flexDirection: 'column',
                 gap: '8px',
                 minHeight: '100vh',
             }}
         >
-            <Box
+            <Container
                 component="header"
-                sx={{ flex: 1, borderRight: '1px solid', borderColor: 'divider' }}
+                sx={{ background: 'lightyellow', flex: 1 }}
             >
                 {typeof renderHeader === 'function' ? renderHeader() : renderHeader}
-            </Box>
-            <Box
+            </Container>
+            <Container
                 component="main"
-                sx={{ flex: 6 }}
+                sx={{ background: 'lightgreen', flex: 6 }}
             >
                 {renderMain ? renderMain() : children}
-            </Box>
+            </Container>
         </Box>
     );
 }

@@ -1,11 +1,11 @@
 import { Box, Button, Typography } from '@mui/material';
 import { NavLink } from 'react-router';
-import { NavPanel, PageLayout } from '@components';
+import { Header, PageLayout } from '@components';
 
 export function ErrorPage() {
   return (
     <PageLayout
-      renderHeader={() => <NavPanel />}
+      renderHeader={() => <Header />}
       renderMain={() => (
         <Box
           sx={{

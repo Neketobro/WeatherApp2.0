@@ -1,10 +1,10 @@
 import { Box } from '@mui/material'
-import { PageLayout, NavPanel } from '@components'
+import { PageLayout, Header } from '@components'
 
 export function FavoritePage() {
     return (
         <PageLayout
-            renderHeader={() => <NavPanel />}
+            renderHeader={() => <Header />}
             renderMain={() => (
                 <Box>
                     FavoritePage

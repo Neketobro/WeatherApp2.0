@@ -19,7 +19,6 @@ export default defineConfig({
     alias: {
       "@": rootDir,
       "@components": resolve(rootDir, "components"),
-      "@ui": resolve(rootDir, "components/UI"),
       "@services": resolve(rootDir, "services"),
       "@store": resolve(rootDir, "store"),
       "@pages": resolve(rootDir, "pages"),
