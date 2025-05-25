@@ -1,15 +1,11 @@
 import { Box, Fab } from "@mui/material";
 import MenuOpenOutlinedIcon from '@mui/icons-material/MenuOpenOutlined';
-import { useDispatch, useSelector } from "react-redux";
-import { selectcCollapsingState, setCollapsingState } from '@store';
+import { useDispatch } from "react-redux";
+import { setCollapsingState } from '@store';
 import { CollapseWrapper } from "./CollapseWrapper";
 
 export function CollapseButton() {
-    const isOpen = useSelector(selectcCollapsingState);
-    const dispatch = useDispatch();
-
-    console.log('isOpen -> ', isOpen);
-    
+    const dispatch = useDispatch();    
 
     return (
         <Box sx={{ display: 'flex', gap: 5 }}>
