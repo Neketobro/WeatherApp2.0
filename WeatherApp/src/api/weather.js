@@ -1,11 +1,31 @@
-import { get } from './httpClient';
-
 const APIkey = import.meta.env.VITE_BASE_API_KEY;
+const baseURL_Currently = import.meta.env.VITE_BASE_URL_API;
+const baseURL_Hourly = import.meta.env.VITE_BASE_URL_API_HOURLY;
 
-export async function getForecastCity(payload, signal) {
-  // console.log('payload -> ', payload);
-  // console.log('signal -> ', signal);
+export async function fetchCurrentWeather(payload) {
 
-  return await get(`?units=metric&q=dnipro&appid=${APIkey}`, signal);
-  // return await get(`?q=${city}&appid=${APIkey}`, signal);
+  console.log('payload weather -> ', payload);
+
+  try {
+    const response = await fetch(`${baseURL_Currently}?units=metric&cnt=70&q=dnipro&appid=${APIkey}`);
+    const data = await response.json();
+
+    return data;
+  } catch (error) {
+    console.warn('error message', error);
+  }
+}
+
+export async function fetchHourlytWeather(payload) {
+
+  console.log('payload weather -> ', payload);
+
+  try {
+    const response = await fetch(`${baseURL_Hourly}?units=metric&q=dnipro&appid=${APIkey}`);
+    const data = await response.json();    
+    
+    return data;
+  } catch (error) {
+    console.warn('error message', error);
+  }
 }

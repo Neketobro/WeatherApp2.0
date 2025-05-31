@@ -1,4 +1,4 @@
-import { useMediaQuery, Container, Box } from '@mui/material';
+import { useMediaQuery, Box } from '@mui/material';
 import { PageLayout, Header } from '@components';
 import { CurrentWeather } from '@templates'
 
@@ -10,7 +10,7 @@ export function HomePage() {
         <PageLayout
             renderHeader={() => <Header />}
             renderMain={() => (
-                <Box sx={{ height: '100%', display: 'flex', alignItems: 'center', paddingInline: '5vw' }}>
+                <Box sx={{ height: '100%', display: 'flex', alignItems: 'center', }}>
                     <CurrentWeather />
                 </Box>
             )}

@@ -13,21 +13,21 @@ export function CurrentWeather() {
         dispatch(weatherFetch('Hello'));
     }, [dispatch]);
 
-    console.log('data after -> ', data);
+    console.log('data -> ', data);
 
     return (
         <>
             {data && Object.keys(data).length > 0 ? (
                 <Paper elevation={2} sx={{ height: '70vh', width: '20vw', borderRadius: '50px', padding: '30px', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center' }}>
-                    <MainText text={data.name} />
+                    <MainText text={data.currently.name} />
                     <Box sx={{ width: '100%', height: '40vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-evenly', gap: 2 }}>
-                        <WeatherIcon weatherStatus={data.weather[0].main} />
-                        <MainText text={data.main.temp} />
+                        <WeatherIcon weatherStatus={data.currently.weather[0].main} />
+                        <MainText text={data.currently.main.temp} />
                         <Typography fontWeight='bold' fontStyle='italic' fontSize='1.5rem' color="text.secondary" sx={{ letterSpacing: 2 }}>
-                            {data.weather[0].description}
+                            {data.currently.weather[0].description}
                         </Typography>
                     </Box>
-                    <AdditionalInfo main={data.main} wind={data.wind} />
+                    <AdditionalInfo main={data.currently.main} wind={data.currently.wind} />
                 </Paper>
             ) : (
                 <CurrentWeatherLoading />

@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { getForecastCity } from '@api';
+import { fetchCurrentWeather, fetchHourlytWeather } from '@api';
 
 const initialState = {
     value: {},
@@ -43,11 +43,15 @@ export const { selectValue } = weatherSlice.selectors;
 
 export const weatherFetch = createAsyncThunk(
     'weather/weatherFetchData',
-    async (payload, { signal }) => {
+    async (payload) => {
         try {
-            const response = await getForecastCity(payload, signal);
+            const response = await fetchCurrentWeather(payload);
+            const response2 = await fetchHourlytWeather(payload);
 
-            return response;
+            return {
+                currently: response, 
+                hourly: response2
+            };
         } catch (e) {
             console.log(`oops, error: ${e}`);
         }

@@ -24,8 +24,7 @@ export function WeatherIcon({ weatherStatus }) {
 
     return (
         <Avatar
-            alt="Remy Sharp"
-            src="/static/images/avatar/1.jpg"
+            alt="?"
             sx={{ width: '11vw', height: '11vw', bgcolor: colorForIcon }}
         >
             {IconComponent}
