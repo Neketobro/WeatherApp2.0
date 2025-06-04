@@ -1,8 +1,8 @@
 import { Box, Paper } from "@mui/material";
 import { useSelector } from 'react-redux';
 import { selectValue } from "@store";
-import { WeatherIcon, AdditionalInfo, CurrentWeatherLoading } from "./index";
-import { TextInComponents } from '@components';
+import { AdditionalInfo, CurrentWeatherLoading } from "./index";
+import { TextInComponents, WeatherIcon } from '@components';
 
 export function CurrentWeather() {
     const data = useSelector(selectValue);
@@ -13,7 +13,7 @@ export function CurrentWeather() {
                 <Paper elevation={2} sx={{ height: '70vh', width: '20vw', borderRadius: '50px', padding: '30px', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center' }}>
                     <TextInComponents text={data.currently.name} fontSize='1rem' textVariant='h3' textAlign='center' fontWeight='bold' textStyle color />
                     <Box sx={{ width: '100%', height: '40vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-evenly', gap: 2 }}>
-                        <WeatherIcon weatherStatus={data.currently.weather[0].main} />
+                        <WeatherIcon weather={data.currently.weather} fontSize='8vw' widthAvatar='11vw' heightAvatar='22vh' />
                         <TextInComponents text={data.currently.main.temp} fontSize='1rem' textVariant='h3' textAlign='center' fontWeight='bold' textStyle color />
                         <TextInComponents text={data.currently.weather[0].description} fontSize='1.5rem' textVariant textAlign='center' fontWeight='bold' textStyle='italic' color="text.secondary" />
                     </Box>

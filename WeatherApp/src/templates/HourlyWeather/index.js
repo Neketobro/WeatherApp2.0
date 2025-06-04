@@ -1,2 +1,2 @@
 export * from './HourlyWeather.jsx';
-export * from './HourlyIcon';
+export * from './HourlyWeatherLoading';
