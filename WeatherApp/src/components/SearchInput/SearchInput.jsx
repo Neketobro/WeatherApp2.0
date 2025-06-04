@@ -1,17 +1,41 @@
-import { TextField, Stack, Autocomplete, Paper } from "@mui/material";
+import { TextField, Stack, Autocomplete, Paper, Fab } from "@mui/material";
 import { cities } from '@utils';
+import { useRef, useState } from "react";
+import SearchIcon from '@mui/icons-material/Search';
 
 export function SearchInput() {
+    const inputValue = useRef(null)
+    const [disabled, setDisabled] = useState(true);
+
+    function submitInput() {
+
+        console.log('inputValue change -> ', inputValue.current.value);
+    }
+
+    function changeInput() {
+        const valueInput = inputValue.current.value;
+        
+        if (valueInput.trim()) {
+            return setDisabled(false);
+        } else {
+            return setDisabled(true);
+        }
+    }
+
+
     return (
-        <Paper elevation={2} sx={{ height: '10vh', width: '39vw', borderRadius: '25px', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center' }}>
-            <Stack spacing={2} sx={{ background: 'yellow', width: '30vw',}}>
+        <Paper elevation={2} sx={{ height: '10vh', width: '39vw', borderRadius: '25px', display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
+            <Stack spacing={2} sx={{ width: '30vw' }}>
                 <Autocomplete
                     id="city_name_input"
                     freeSolo
                     options={cities.map((option) => option.title)}
-                    renderInput={(params) => <TextField {...params} label="City name" sx={{ height: '5vh', borderRadius: '18px',  }} />}
+                    renderInput={(params) => <TextField {...params} label="City name" inputRef={inputValue} onBlur={changeInput} />}
                 />
             </Stack>
+            <Fab variant="contained" onClick={submitInput} sx={{ bgcolor: 'primary.main', }} disabled={disabled}>
+                <SearchIcon />
+            </Fab>
         </Paper>
     )
 }
