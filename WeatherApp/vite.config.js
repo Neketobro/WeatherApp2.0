@@ -25,6 +25,7 @@ export default defineConfig({
       "@templates": resolve(rootDir, "templates"),
       "@api": resolve(rootDir, "api"),
       "@utils": resolve(rootDir, "utils"),
+      "@ui": resolve(rootDir, "components/UI"),
     }
   } 
 })

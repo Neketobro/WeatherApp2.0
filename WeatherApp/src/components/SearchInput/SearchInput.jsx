@@ -1,9 +1,13 @@
+import { useRef, useState, useEffect} from "react";
 import { TextField, Stack, Autocomplete, Paper, Fab } from "@mui/material";
+import { useDispatch } from 'react-redux';
 import { cities } from '@utils';
-import { useRef, useState } from "react";
+import { weatherFetch } from "@store";
 import SearchIcon from '@mui/icons-material/Search';
 
+
 export function SearchInput() {
+    const dispatch = useDispatch();
     const inputValue = useRef(null)
     const [disabled, setDisabled] = useState(true);
 
@@ -21,6 +25,10 @@ export function SearchInput() {
             return setDisabled(true);
         }
     }
+
+    useEffect(() => {
+        dispatch(weatherFetch('Hello'));
+    }, [dispatch]);
 
 
     return (
