@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect} from "react";
+import { useRef, useState } from "react";
 import { TextField, Stack, Autocomplete, Paper, Fab } from "@mui/material";
 import { useDispatch } from 'react-redux';
 import { cities } from '@utils';
@@ -12,24 +12,18 @@ export function SearchInput() {
     const [disabled, setDisabled] = useState(true);
 
     function submitInput() {
-
-        console.log('inputValue change -> ', inputValue.current.value);
+        dispatch(weatherFetch(inputValue.current.value));
     }
 
     function changeInput() {
         const valueInput = inputValue.current.value;
-        
+
         if (valueInput.trim()) {
             return setDisabled(false);
         } else {
             return setDisabled(true);
         }
     }
-
-    useEffect(() => {
-        dispatch(weatherFetch('Hello'));
-    }, [dispatch]);
-
 
     return (
         <Paper elevation={2} sx={{ height: '10vh', width: '39vw', borderRadius: '25px', display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
