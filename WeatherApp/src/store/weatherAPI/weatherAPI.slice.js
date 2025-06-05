@@ -10,14 +10,7 @@ const initialState = {
 const weatherSlice = createSlice({
     name: 'weather',
     initialState,
-    reducers: {
-        increment(state) {
-            state.value++
-        },
-        decrement(state) {
-            state.value--
-        },
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder.addCase(weatherFetch.pending, (state) => {
             state.status = "loading";
@@ -34,12 +27,13 @@ const weatherSlice = createSlice({
     },
     selectors: {
         selectValue: (state) => state.value,
+        selectValueError: (state) => state.error,
     }
 })
 
 export const { increment, decrement } = weatherSlice.actions;
 export default weatherSlice.reducer;
-export const { selectValue } = weatherSlice.selectors;
+export const { selectValue, selectValueError } = weatherSlice.selectors;
 
 export const weatherFetch = createAsyncThunk(
     'weather/weatherFetchData',
@@ -49,7 +43,7 @@ export const weatherFetch = createAsyncThunk(
             const response2 = await fetchHourlytWeather(payload);
 
             return {
-                currently: response, 
+                currently: response,
                 hourly: response2
             };
         } catch (e) {

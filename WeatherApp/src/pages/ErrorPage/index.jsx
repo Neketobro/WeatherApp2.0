@@ -3,6 +3,7 @@ import { NavLink } from 'react-router';
 import { Header, PageLayout } from '@components';
 
 export function ErrorPage() {
+
   return (
     <PageLayout
       renderHeader={() => <Header />}
@@ -24,7 +25,7 @@ export function ErrorPage() {
             Page not found
           </Typography>
           <NavLink to="/">
-            <Button variant="outlined">Return to the main page</Button>
+            <Button variant="outlined" onClick={() => window.location.reload()}>Restart page</Button>
           </NavLink>
         </Box>
       )}
