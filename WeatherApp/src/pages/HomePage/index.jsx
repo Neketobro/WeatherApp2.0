@@ -17,7 +17,7 @@ export function HomePage() {
                     <Box sx={{ background: 'blue', height: '100%', display: 'flex', alignItems: 'center', flexDirection: 'column', gap: 5 }}>
                         <SearchInput />
                         <HourlyWeather />
-                        <Paper elevation={2} sx={{ position: 'relative', width: '39vw', height: '30vh', borderRadius: '25px', display: 'flex', flexDirection: 'row', padding: 2, }}>
+                        <Paper elevation={2} sx={{ position: 'relative', width: '39vw', height: '32vh', borderRadius: '25px', display: 'flex', flexDirection: 'row', padding: 2, }}>
                             <FavoriteLocation />
                             <DailyWeather />
                         </Paper>

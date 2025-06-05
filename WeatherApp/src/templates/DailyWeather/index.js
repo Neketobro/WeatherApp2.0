@@ -1,1 +1,2 @@
-export * from './DailyWeather.jsx'
+export * from './DailyWeather.jsx';
+export * from './DailyWeatherLoading';

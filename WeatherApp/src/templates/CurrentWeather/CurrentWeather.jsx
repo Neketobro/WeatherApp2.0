@@ -10,7 +10,7 @@ export function CurrentWeather() {
     return (
         <>
             {data && data.currently && Object.keys(data).length > 0 ? (
-                <Paper elevation={2} sx={{ height: '70vh', width: '20vw', borderRadius: '50px', padding: '30px', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center' }}>
+                <Paper elevation={2} sx={{ height: '71vh', width: '20vw', borderRadius: '50px', padding: '30px', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center' }}>
                     <TextInComponents text={data.currently.name} fontSize='1rem' textVariant='h3' textAlign='center' fontWeight='bold' textStyle color />
                     <Box sx={{ width: '100%', height: '40vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-evenly', gap: 2 }}>
                         <WeatherIcon weather={data.currently.weather} fontSize='8vw' widthAvatar='11vw' heightAvatar='22vh' />
