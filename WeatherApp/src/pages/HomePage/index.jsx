@@ -11,10 +11,10 @@ export function HomePage() {
             renderHeader={() => <Header />}
             renderMain={() => (
                 <Box sx={{ display: 'flex', gap: 10 }}>
-                    <Box sx={{ background: 'red', height: '100%', display: 'flex', alignItems: 'center', }}>
+                    <Box sx={{ height: '100%', display: 'flex', alignItems: 'center', }}>
                         <CurrentWeather />
                     </Box>
-                    <Box sx={{ background: 'blue', height: '100%', display: 'flex', alignItems: 'center', flexDirection: 'column', gap: 5 }}>
+                    <Box sx={{ height: '100%', display: 'flex', alignItems: 'center', flexDirection: 'column', gap: 5 }}>
                         <SearchInput />
                         <HourlyWeather />
                         <Paper elevation={2} sx={{ position: 'relative', width: '39vw', height: '32vh', borderRadius: '25px', display: 'flex', flexDirection: 'row', padding: 2, }}>

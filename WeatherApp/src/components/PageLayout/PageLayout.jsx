@@ -23,7 +23,7 @@ export function PageLayout({
             </Container>
             <Container
                 component="main"
-                sx={{ background: 'lightgrey', flex: 6 }}
+                sx={{ flex: 6 }}
             >
                 {renderMain ? renderMain() : children}
             </Container>

@@ -3,4 +3,5 @@ export * from './Loader';
 export * from './ErrorBoundary';
 export * from './Header';
 export * from './SearchInput';
+export * from './FavoriteActionButton';
 export * from './UI';
