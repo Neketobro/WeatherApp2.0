@@ -1,5 +1,6 @@
 import { Box } from '@mui/material'
 import { PageLayout, Header } from '@components'
+import { FavoriteLocation } from '@templates';
 
 export function FavoritePage() {
     return (
@@ -7,7 +8,7 @@ export function FavoritePage() {
             renderHeader={() => <Header />}
             renderMain={() => (
                 <Box>
-                    FavoritePage
+                    <FavoriteLocation />
                 </Box>
             )}
         />
